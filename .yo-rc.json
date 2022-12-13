@@ -1,0 +1,14 @@
+{
+  "generator-ui5-ts-app": {
+    "application": "CPSP2SBruggeCockpit",
+    "namespace": "pro.delaware",
+    "framework": "SAPUI5",
+    "frameworkVersion": "1.90.0",
+    "author": "goeseelsl",
+    "tstypes": "@sapui5/ts-types-esm",
+    "tstypesVersion": "1.90.0",
+    "appId": "pro.delaware.CPSP2SBruggeCockpit",
+    "appURI": "pro/delaware/CPSP2SBruggeCockpit",
+    "setupCompleted": true
+  }
+}

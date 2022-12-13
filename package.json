@@ -1,0 +1,49 @@
+{
+  "name": "CPSP2SBruggeCockpit",
+  "version": "1.0.0",
+  "description": "UI5 Application: CPSP2SBruggeCockpit",
+  "author": "goeseelsl",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "npm-run-all build:ts build:ui5",
+    "build:opt": "npm-run-all build:ts build:ui5:opt",
+    "build:ts": "babel src --out-dir webapp --source-maps inline --extensions \".ts,.js\" --copy-files",
+    "build:ui5": "ui5 build --clean-dest",
+    "build:ui5:opt": "ui5 build self-contained --clean-dest --all",
+    "start": "npm-run-all --parallel watch:ts start:ui5",
+    "watch:ts": "babel src --out-dir webapp --source-maps inline --extensions \".ts,.js\" --copy-files --watch",
+    "start:ui5": "ui5 serve --port 8080 -o index.html",
+    "start:dist": "ui5 serve  --port 8080 -o index.html --config ui5-dist.yaml",
+    "ts-typecheck": "tsc --noEmit",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@sap/ux-ui5-tooling": "^1.5.3",
+    "@sapui5/ts-types-esm": "^1.99.1",
+    "@types/jquery": "3.5.14",
+    "@types/node": "^17.0.35",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "@ui5/cli": "^2.14.14",
+    "babel-preset-transform-ui5": "^7.0.5",
+    "eslint": "^8.13.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^4.6.3",
+    "ui5-deployer": "^0.4.1",
+    "ui5-middleware-livereload": "^0.5.10",
+    "ui5-middleware-route-proxy": "^1.0.10",
+    "ui5-middleware-servestatic": "^0.3.10"
+  },
+  "ui5": {
+    "dependencies": [
+      "ui5-middleware-livereload",
+      "ui5-middleware-servestatic",
+      "@sap/ux-ui5-tooling",
+      "ui5-middleware-route-proxy"
+    ]
+  }
+}
